@@ -1,11 +1,11 @@
-#---
+# ---
 # Excerpted from "Real-Time Phoenix",
 # published by The Pragmatic Bookshelf.
 # Copyrights apply to this code. It may not be used to create training material,
 # courses, books, articles, and the like. Contact us if you are in doubt.
 # We make no guarantees that this code is fit for any purpose.
 # Visit http://www.pragmaticprogrammer.com/titles/sbsockets for more book information.
-#---
+# ---
 defmodule Sneakers23Web do
   @moduledoc """
   The entrypoint for defining your web interface, such
@@ -24,6 +24,8 @@ defmodule Sneakers23Web do
   below. Instead, define any helper function in modules
   and import those modules here.
   """
+
+  defdelegate notify_product_released(product), to: Sneakers23Web.ProductChannel
 
   def controller do
     quote do
