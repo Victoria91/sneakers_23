@@ -25,7 +25,10 @@ defmodule Sneakers23Web do
   and import those modules here.
   """
 
-  defdelegate notify_product_released(product), to: Sneakers23Web.ProductChannel
+  alias Sneakers23Web.ProductChannel
+
+  defdelegate notify_product_released(product), to: ProductChannel
+  defdelegate notify_item_stock_change(opts), to: ProductChannel
 
   def controller do
     quote do
